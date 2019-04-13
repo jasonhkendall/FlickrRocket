@@ -90,13 +90,6 @@
                                 <color key="tintColor" red="0.26248264310000002" green="0.073323346669999998" blue="0.22354039549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="barTintColor" red="0.22347125409999999" green="0.060988992450000001" blue="0.21569785480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yoc-2Z-6l2">
-                                <rect key="frame" x="139" y="402" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
