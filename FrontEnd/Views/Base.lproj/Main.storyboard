@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JmT-1v-kDz">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Collection View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="mainVCID" title="Collection View Controller" id="BYZ-38-t0r" customClass="ViewController" customModule="FlickrRocket" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0v6-3Y-4lv">
+                                <rect key="frame" x="8" y="100" width="359" height="515"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="12" id="54h-Sa-Kk4">
+                                    <size key="itemSize" width="133" height="119"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="zVn-D0-h1m" customClass="CollectionCell" customModule="FlickrRocket" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="133" height="119"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="133" height="119"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n70-iy-8xH">
+                                                    <rect key="frame" x="8" y="-11" width="100" height="100"/>
+                                                    <color key="backgroundColor" red="0.25490196079999999" green="0.33333333329999998" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="Oyb-R1-Xb6"/>
+                                                        <constraint firstAttribute="height" constant="100" id="cbb-MK-cI2"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="n70-iy-8xH" firstAttribute="topMargin" secondItem="zVn-D0-h1m" secondAttribute="top" constant="17" id="ox1-Y2-KIp"/>
+                                            <constraint firstItem="n70-iy-8xH" firstAttribute="leading" secondItem="zVn-D0-h1m" secondAttribute="leading" constant="8" id="rVc-ZP-6dk"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imgProfile" destination="n70-iy-8xH" id="TI2-DA-4US"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="CqX-Ck-uy5"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="T3R-hO-yR5"/>
+                                </connections>
+                            </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="RYo-h3-OT5">
+                                <rect key="frame" x="157.5" y="303.5" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Izh-B9-79g"/>
+                                    <constraint firstAttribute="width" constant="60" id="Pq5-6p-JXg"/>
+                                </constraints>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="blackTranslucent" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b8v-qf-iLh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <color key="barTintColor" red="0.25858521461486816" green="0.069086052477359772" blue="0.22354063391685486" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <items>
+                                    <navigationItem title="Flickr-Rocket!" largeTitleDisplayMode="always" id="QXe-v5-C55"/>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tdZ-MK-nj7">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" red="0.22347125409999999" green="0.060988992450000001" blue="0.21569785480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <items>
+                                    <barButtonItem title="About..." style="done" id="Stx-ju-iO2">
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <segue destination="yVJ-bf-gWw" kind="presentation" id="Ypo-DU-scF"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="tintColor" red="0.26248264310000002" green="0.073323346669999998" blue="0.22354039549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="barTintColor" red="0.22347125409999999" green="0.060988992450000001" blue="0.21569785480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </toolbar>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yoc-2Z-6l2">
+                                <rect key="frame" x="139" y="402" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0v6-3Y-4lv" secondAttribute="trailing" constant="8" id="LOW-aC-AdK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0v6-3Y-4lv" secondAttribute="bottom" constant="8" id="LPy-ll-rp7"/>
+                            <constraint firstItem="0v6-3Y-4lv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="U2S-HS-qkH"/>
+                            <constraint firstItem="RYo-h3-OT5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="d3s-vq-5Dr"/>
+                            <constraint firstItem="RYo-h3-OT5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hDf-Ru-ria"/>
+                            <constraint firstItem="0v6-3Y-4lv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="vaK-0j-5sv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="h3v-hr-nPa"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="activityInd" destination="RYo-h3-OT5" id="OqX-q5-iSB"/>
+                        <outlet property="collectionMain" destination="0v6-3Y-4lv" id="sfK-dA-I9B"/>
+                        <segue destination="PYr-7j-Igh" kind="presentation" identifier="imageSegue" id="Hh2-AJ-bmh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--About...-->
+        <scene sceneID="aKm-3D-rkf">
+            <objects>
+                <viewController title="About..." id="yVJ-bf-gWw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N6C-CI-rlQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HCQ-i9-rfR">
+                                <rect key="frame" x="62" y="79" width="251" height="58"/>
+                            </stackView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAz-Rp-adx">
+                                <rect key="frame" x="0.0" y="222" width="375" height="3000"/>
+                                <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bottle Rocket Intern Exam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRF-Ml-zd7">
+                                <rect key="frame" x="62" y="43" width="251" height="25"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Specifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzX-hA-9aH">
+                                <rect key="frame" x="123" y="76" width="129" height="25"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3at-4e-eD4">
+                                <rect key="frame" x="0.0" y="175" width="375" height="3000"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3000" id="kkI-lY-JSk"/>
+                                </constraints>
+                                <string key="text">iOS Intern Test
+
+The objective of this test is to see hThis project is degined to examine the applicatints ability to read, design, interpret, develop, and implement the code necessary to fulfull the requirements needed to work within a more highly functioning team.
+
+# Bottle Rocket iOS Intern Test
+
+The objective of this test is to see how much you already know about developing
+apps for iOS before we consider bringing you onboard as an intern here at
+Bottle Rocket. At Bottle Rocket, we pride ourselves in taking our interns
+seriously as full team members; you'll have the opportunity to do work here
+that interns at other organizations could only dream of. You'll be a full part
+of a project team, and be responsible for contributing to a shipping code base.
+
+## Resources to investigate before starting on the exam
+
+https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/
+https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/URLLoadingSystem/Articles/UsingNSURLSession.html
+https://developer.apple.com/reference/uikit/uicollectionview
+
+## Broad Overview
+
+This exam is fairly straightforward. You will create a simple app that loads a
+collection of images from Flickr. These images will be displayed in a
+UICollectionView. When an image is tapped by the user, the user will be
+presented with a detail view of the image, including additional information
+about the image.
+
+## Language
+
+At Bottle Rocket, we use both Objective-C and Swift. We love writing code in
+Swift, but there are times where we have to maintain and understand Objective-C.
+You are welcome to use either language; using a mixture of both would yield the
+most impressive result (when done well, of course).
+
+## Target device
+
+Exams will be reviewed both in the iOS simulator as well as on a phone. Please
+use the most recent version of Xcode, and test on both the simulator and on
+device.
+
+## Functional requirements
+
+Create a "Single View Application". Name it "FlickrRocket".
+
+Create a UICollectionView in the main view of the initial view controller. Do not create a UICollectionViewController! The UICollectionViewCell for this collection view should
+consist simply of a UIImageView.
+
+To supply data to that UICollectionView, fetch flickr results from this URL:
+"https://api.flickr.com/services/rest/?format=json&amp;sort=random&amp;method=flickr.photos.search&amp;tags=rocket&amp;tag_mode=all&amp;api_key=0e2b6aaf8a6901c264acb91f151a3350&amp;nojsoncallback=1"
+
+Use an NSURLSession to fetch this data. Parse the fetched data using NSJSONSerialization.
+
+This data will return as a dictionary. From within that dictionary, look at the "photo" array within the "photos" element. Each element should look similar to this:
+
+{
+	"farm": 9,
+	"id":"8658536632",
+	"isfamily": 0,
+	"isfriend": 0,
+	"ispublic": 1,
+	"owner":"35067687@N04",
+	"secret": "afab53f070",
+	"server":"8111",
+	"title": "Antares Rocket Preparation (201304160006HQ)"
+}
+
+For each element, you can fetch the actual image by preparing a URL as such:
+
+"https://farm9.static.flickr.com/8111/8658536632_afab53f070.jpg"; you should see where the farm, server, id, and secret are used.
+
+When the user taps on a collection view cell, show that image as a fullscreen detail view.
+
+All screens, cells, layouts, etc. can be designed in any way you see fit.
+
+## Extra Credit
+
+Implement a cache for images.
+Perform a non-standard or even custom transition between the two screens.
+Show a progress indicator while downloads are occurring.
+Create a universal (iPhone/iPad) app, with appropriate layouts based on size classes and autolayout.
+Implement robust error handling.
+Add an "About this app" screen.
+Use additional Flickr API calls to display the photo owner's username.
+Create an app icon set and a launch screen. (Do not spend much time on artwork, as we are primarily interested in your programming skills.)
+
+## FAQ
+
+Q: Can I use third party libraries or CocoaPods?
+A: We are interested in seeing YOUR work in this project. None of the tasks are so complex as to require the use of a third party library.
+
+Q: Can I use NSData/NSString initWithContentsOfURL?
+A: Please do not. These are not asynchronous methods.
+
+## Contact
+
+Feel free to contact our iOS architect, Russell Mirabelli, with any questions:
+russell.mirabelli@bottlerocketstudios.comow much you already know about developing
+apps for iOS before we consider bringing you onboard as an intern here at
+Bottle Rocket. At Bottle Rocket, we pride ourselves in taking our interns
+seriously as full team members; you'll have the opportunity to do work here
+that interns at other organizations could only dream of. You'll be a full part
+of a project team, and be responsible for contributing to a shipping code base.
+
+## Resources to investigate before starting on the exam
+
+https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/
+https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/URLLoadingSystem/Articles/UsingNSURLSession.html
+https://developer.apple.com/reference/uikit/uicollectionview
+
+## Broad Overview
+
+This exam is fairly straightforward. You will create a simple app that loads a
+collection of images from Flickr. These images will be displayed in a
+UICollectionView. When an image is tapped by the user, the user will be
+presented with a detail view of the image, including additional information
+about the image.
+
+## Language
+
+At Bottle Rocket, we use both Objective-C and Swift. We love writing code in
+Swift, but there are times where we have to maintain and understand Objective-C.
+You are welcome to use either language; using a mixture of both would yield the
+most impressive result (when done well, of course).
+
+## Target device
+
+Exams will be reviewed both in the iOS simulator as well as on a phone. Please
+use the most recent version of Xcode, and test on both the simulator and on
+device.
+
+## Functional requirements
+
+Create a "Single View Application". Name it "FlickrRocket".
+
+Create a UICollectionView in the main view of the initial view controller. Do not create a UICollectionViewController! The UICollectionViewCell for this collection view should
+consist simply of a UIImageView.
+
+To supply data to that UICollectionView, fetch flickr results from this URL:
+"https://api.flickr.com/services/rest/?format=json&amp;sort=random&amp;method=flickr.photos.search&amp;tags=rocket&amp;tag_mode=all&amp;api_key=0e2b6aaf8a6901c264acb91f151a3350&amp;nojsoncallback=1"
+
+Use an NSURLSession to fetch this data. Parse the fetched data using NSJSONSerialization.
+
+This data will return as a dictionary. From within that dictionary, look at the "photo" array within the "photos" element. Each element should look similar to this:
+
+{
+	"farm": 9,
+	"id":"8658536632",
+	"isfamily": 0,
+	"isfriend": 0,
+	"ispublic": 1,
+	"owner":"35067687@N04",
+	"secret": "afab53f070",
+	"server":"8111",
+	"title": "Antares Rocket Preparation (201304160006HQ)"
+}
+
+For each element, you can fetch the actual image by preparing a URL as such:
+
+"https://farm9.static.flickr.com/8111/8658536632_afab53f070.jpg"; you should see where the farm, server, id, and secret are used.
+
+When the user taps on a collection view cell, show that image as a fullscreen detail view.
+
+All screens, cells, layouts, etc. can be designed in any way you see fit.
+
+## Extra Credit
+
+Implement a cache for images.
+Perform a non-standard or even custom transition between the two screens.
+Show a progress indicator while downloads are occurring.
+Create a universal (iPhone/iPad) app, with appropriate layouts based on size classes and autolayout.
+Implement robust error handling.
+Add an "About this app" screen.
+Use additional Flickr API calls to display the photo owner's username.
+Create an app icon set and a launch screen. (Do not spend much time on artwork, as we are primarily interested in your programming skills.)
+
+## FAQ
+
+Q: Can I use third party libraries or CocoaPods?
+A: We are interested in seeing YOUR work in this project. None of the tasks are so complex as to require the use of a third party library.
+
+Q: Can I use NSData/NSString initWithContentsOfURL?
+A: Please do not. These are not asynchronous methods.
+
+## Contact
+
+Feel free to contact our iOS architect, Russell Mirabelli, with any questions:
+russell.mirabelli@bottlerocketstudios.comread, design, interpret, develop, and implement the code necessary to fulfull the requirements needed to work within a more highly functioning team.
+
+# Bottle Rocket iOS Intern Test
+
+The objective of this test is to see how much you already know about developing
+apps for iOS before we consider bringing you onboard as an intern here at
+Bottle Rocket. At Bottle Rocket, we pride ourselves in taking our interns
+seriously as full team members; you'll have the opportunity to do work here
+that interns at other organizations could only dream of. You'll be a full part
+of a project team, and be responsible for contributing to a shipping code base.
+
+## Resources to investigate before starting on the exam
+
+https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/
+https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/URLLoadingSystem/Articles/UsingNSURLSession.html
+https://developer.apple.com/reference/uikit/uicollectionview
+
+## Broad Overview
+
+This exam is fairly straightforward. You will create a simple app that loads a
+collection of images from Flickr. These images will be displayed in a
+UICollectionView. When an image is tapped by the user, the user will be
+presented with a detail view of the image, including additional information
+about the image.
+
+## Language
+
+At Bottle Rocket, we use both Objective-C and Swift. We love writing code in
+Swift, but there are times where we have to maintain and understand Objective-C.
+You are welcome to use either language; using a mixture of both would yield the
+most impressive result (when done well, of course).
+
+## Target device
+
+Exams will be reviewed both in the iOS simulator as well as on a phone. Please
+use the most recent version of Xcode, and test on both the simulator and on
+device.
+
+## Functional requirements
+
+Create a "Single View Application". Name it "FlickrRocket".
+
+Create a UICollectionView in the main view of the initial view controller. Do not create a UICollectionViewController! The UICollectionViewCell for this collection view should
+consist simply of a UIImageView.
+
+To supply data to that UICollectionView, fetch flickr results from this URL:
+"https://api.flickr.com/services/rest/?format=json&amp;sort=random&amp;method=flickr.photos.search&amp;tags=rocket&amp;tag_mode=all&amp;api_key=0e2b6aaf8a6901c264acb91f151a3350&amp;nojsoncallback=1"
+
+Use an NSURLSession to fetch this data. Parse the fetched data using NSJSONSerialization.
+
+This data will return as a dictionary. From within that dictionary, look at the "photo" array within the "photos" element. Each element should look similar to this:
+
+{
+	"farm": 9,
+	"id":"8658536632",
+	"isfamily": 0,
+	"isfriend": 0,
+	"ispublic": 1,
+	"owner":"35067687@N04",
+	"secret": "afab53f070",
+	"server":"8111",
+	"title": "Antares Rocket Preparation (201304160006HQ)"
+}
+
+For each element, you can fetch the actual image by preparing a URL as such:
+
+"https://farm9.static.flickr.com/8111/8658536632_afab53f070.jpg"; you should see where the farm, server, id, and secret are used.
+
+When the user taps on a collection view cell, show that image as a fullscreen detail view.
+
+All screens, cells, layouts, etc. can be designed in any way you see fit.
+
+## Extra Credit
+
+Implement a cache for images.
+Perform a non-standard or even custom transition between the two screens.
+Show a progress indicator while downloads are occurring.
+Create a universal (iPhone/iPad) app, with appropriate layouts based on size classes and autolayout.
+Implement robust error handling.
+Add an "About this app" screen.
+Use additional Flickr API calls to display the photo owner's username.
+Create an app icon set and a launch screen. (Do not spend much time on artwork, as we are primarily interested in your programming skills.)
+
+## FAQ
+
+Q: Can I use third party libraries or CocoaPods?
+A: We are interested in seeing YOUR work in this project. None of the tasks are so complex as to require the use of a third party library.
+
+Q: Can I use NSData/NSString initWithContentsOfURL?
+A: Please do not. These are not asynchronous methods.
+
+## Contact
+
+Feel free to contact our iOS architect, Russell Mirabelli, with any questions:
+russell.mirabelli@bottlerocketstudios.com</string>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="reC-Sd-L28">
+                                <rect key="frame" x="0.0" y="131" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Return" id="Lic-hM-gMj">
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <segue destination="JmT-1v-kDz" kind="presentation" id="MKL-go-7Rs"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.31286507844924927" green="0.11161334067583084" blue="0.26507481932640076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HCQ-i9-rfR" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RRF-Ml-zd7" secondAttribute="trailing" id="4Wz-g2-U9n"/>
+                            <constraint firstItem="RRF-Ml-zd7" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HCQ-i9-rfR" secondAttribute="trailing" id="AN8-mQ-DZx"/>
+                            <constraint firstItem="HCQ-i9-rfR" firstAttribute="top" secondItem="RRF-Ml-zd7" secondAttribute="bottom" constant="11" id="EdB-tZ-Hti"/>
+                            <constraint firstItem="HCQ-i9-rfR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RRF-Ml-zd7" secondAttribute="leading" id="FmD-mb-pmp"/>
+                            <constraint firstItem="3at-4e-eD4" firstAttribute="top" secondItem="reC-Sd-L28" secondAttribute="bottom" id="HI0-if-7Q4"/>
+                            <constraint firstItem="cAz-Rp-adx" firstAttribute="top" secondItem="reC-Sd-L28" secondAttribute="bottom" constant="47" id="JcR-Td-iVN"/>
+                            <constraint firstItem="RRF-Ml-zd7" firstAttribute="centerX" secondItem="UzX-hA-9aH" secondAttribute="centerX" id="Kl4-gb-gr6"/>
+                            <constraint firstItem="cAz-Rp-adx" firstAttribute="trailing" secondItem="reC-Sd-L28" secondAttribute="trailing" id="KyN-24-9lY"/>
+                            <constraint firstItem="3at-4e-eD4" firstAttribute="top" secondItem="HCQ-i9-rfR" secondAttribute="bottom" constant="38" id="UV7-2Y-alL"/>
+                            <constraint firstAttribute="bottom" secondItem="cAz-Rp-adx" secondAttribute="bottom" constant="-2555" id="Y4p-mO-wkv"/>
+                            <constraint firstItem="UzX-hA-9aH" firstAttribute="top" secondItem="RRF-Ml-zd7" secondAttribute="bottom" constant="8" symbolic="YES" id="YA9-AA-8wF"/>
+                            <constraint firstItem="reC-Sd-L28" firstAttribute="top" secondItem="UzX-hA-9aH" secondAttribute="bottom" constant="30" id="b4z-NI-wW5"/>
+                            <constraint firstItem="cAz-Rp-adx" firstAttribute="leading" secondItem="reC-Sd-L28" secondAttribute="leading" id="bHt-uc-VmZ"/>
+                            <constraint firstItem="RRF-Ml-zd7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HCQ-i9-rfR" secondAttribute="leading" id="de6-Ru-63B"/>
+                            <constraint firstItem="RRF-Ml-zd7" firstAttribute="top" secondItem="CZj-d8-ihH" secondAttribute="top" constant="23" id="dhh-1z-v0U"/>
+                            <constraint firstItem="cAz-Rp-adx" firstAttribute="trailing" secondItem="3at-4e-eD4" secondAttribute="trailing" id="f63-EN-NJV"/>
+                            <constraint firstAttribute="trailing" secondItem="reC-Sd-L28" secondAttribute="trailing" id="lpW-71-Ggt"/>
+                            <constraint firstItem="cAz-Rp-adx" firstAttribute="leading" secondItem="3at-4e-eD4" secondAttribute="leading" id="rFd-KO-uyF"/>
+                            <constraint firstItem="HCQ-i9-rfR" firstAttribute="centerX" secondItem="reC-Sd-L28" secondAttribute="centerX" id="zEo-tr-cV6"/>
+                            <constraint firstItem="reC-Sd-L28" firstAttribute="leading" secondItem="N6C-CI-rlQ" secondAttribute="leading" id="zct-Re-Ugk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CZj-d8-ihH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wuL-V3-SAH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="300" y="897.30134932533736"/>
+        </scene>
+        <!--Image Controller-->
+        <scene sceneID="t9S-od-mbE">
+            <objects>
+                <viewController storyboardIdentifier="imageVCID" id="PYr-7j-Igh" customClass="ImageController" customModule="FlickrRocket" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tHJ-fC-ssm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRf-u6-Tbk">
+                                <rect key="frame" x="8" y="28" width="359" height="50"/>
+                                <color key="backgroundColor" red="0.26248264310000002" green="0.073323346669999998" blue="0.22354039549999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="njh-rO-iqS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oq1-CN-WA3">
+                                <rect key="frame" x="8" y="98" width="359" height="485"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.46592730283737183" green="0.51929980516433716" blue="0.76865559816360474" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="TqG-dZ-Fgf" firstAttribute="trailing" secondItem="uRf-u6-Tbk" secondAttribute="trailing" constant="8" id="14k-h5-Lri"/>
+                            <constraint firstItem="uRf-u6-Tbk" firstAttribute="leading" secondItem="TqG-dZ-Fgf" secondAttribute="leading" constant="8" id="6DQ-np-JYI"/>
+                            <constraint firstItem="TqG-dZ-Fgf" firstAttribute="bottom" secondItem="Oq1-CN-WA3" secondAttribute="bottom" constant="40" id="HWB-Zf-I8K"/>
+                            <constraint firstItem="uRf-u6-Tbk" firstAttribute="top" secondItem="TqG-dZ-Fgf" secondAttribute="top" constant="8" id="iVU-VM-zff"/>
+                            <constraint firstItem="Oq1-CN-WA3" firstAttribute="leading" secondItem="TqG-dZ-Fgf" secondAttribute="leading" constant="8" id="n48-bz-vec"/>
+                            <constraint firstItem="Oq1-CN-WA3" firstAttribute="top" secondItem="uRf-u6-Tbk" secondAttribute="bottom" constant="20" id="oEE-4j-fgh"/>
+                            <constraint firstItem="TqG-dZ-Fgf" firstAttribute="trailing" secondItem="Oq1-CN-WA3" secondAttribute="trailing" constant="8" id="oqA-AA-ssG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TqG-dZ-Fgf"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imgView" destination="Oq1-CN-WA3" id="6cg-IE-gec"/>
+                        <outlet property="lblTitle" destination="uRf-u6-Tbk" id="Bhn-S7-7Jd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IEv-4X-pO2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1887" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="W4j-vH-72M">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="JmT-1v-kDz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LvG-zV-KaZ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ifp-f0-Hnw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X24-oA-GdA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="300" y="134"/>
+        </scene>
+    </scenes>
+</document>
